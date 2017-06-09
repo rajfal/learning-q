@@ -1,0 +1,45 @@
+
+chapter 2:
+
+q)a:1
+q)a
+1
+q)a:"text in here"
+q)a
+"text in here"
+q)a:[1;"text in here"]
+'assign
+q)a
+"text in here"
+q)a:(1;"text in here")
+q)a
+1
+"text in here"
+q)a[0]
+1
+q)a[1]
+"text in here"
+q)a[1]=2
+000000000000b
+q)a[0]=2
+0b
+q)reverse(a)
+"text in here"
+1
+q)3|5
+5
+q)3&5
+3
+q)abC&abc
+'abc
+  [0]  abC&abc
+           ^
+q)"abc"|"abC"
+"abc"
+q)"abc"&"abC"
+"abC"
+q)10:00&10:20 /and - min
+10:00
+q)10:00|10:20 /or - max
+10:20
+

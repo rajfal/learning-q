@@ -1,0 +1,67 @@
+########################################################################
+Q Tips by Nick Psaris
+########################################################################
+chapter 3:
+========================================================================
+=> page 22
+------------------------------------------------------------------------
+=> Character Vectors
+........................................................................
+
+q)"welcome home"[0]
+"w"
+- return 1st vector element
+
+q)reverse "welcome home"[0]
+"w"
+- you'd expect that to be 'e'; however q evaluates from right to left
+- so first the statement yields 'w' and then it reverse the single character which is still 'w'
+
+q)"welcome"," home"
+"welcome home"
+- comma, ',' is a join operator
+
+q)4#"welcome"," home"
+"welc"
+- has, '#', is a take operator
+-first join two character vectors, then take the first 4 characters of the resulting single character vector
+
+q)-4#"welcome home"
+"home"
+- take the last 4 characters of the character vector
+
+q)4#(reverse "welcome home")
+"emoh"
+- reverse result is "emoh emoclew"
+
+q)-4#(reverse "welcome home")
+"clew"
+- reverse result is "emoh emoclew"
+
+q)4#"w"
+"wwww"
+- we need to take the first 4 characters, our string vector has only 1 character 'w'
+- so the other three characters will be filled in with the only known character 'w'
+
+q)4#"wx"
+"wxwx"
+- as above
+
+q)4#"wxz"
+"wxzw"
+- as above
+
+q)1 rotate "abc"
+"bca"
+- move 'a', single character, to the end of the remaining character vector
+
+q)2 rotate "abc"
+"cab"
+- move 'ab', two characters, to the end of the remaining character vector
+
+q)3 rotate "abc"
+"abc"
+q)0 rotate "abc"
+"abc"
+- note these two examples
+
