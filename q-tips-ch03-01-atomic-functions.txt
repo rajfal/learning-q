@@ -5,7 +5,7 @@ chapter 3:
 ========================================================================
 => page 22-23
 ------------------------------------------------------------------------
-=> Atomic Functions
+=> Atomic Functions and Lists
 ........................................................................
 
 
@@ -39,62 +39,63 @@ q)b,"|"
 
 - other operations between atoms and vectors
 
+q)6>5 7 9
+100b
+- is 6 larger than any of the elements in the list
+- true false false
 
+q)6>a
+100b
+- compare an atom to a vector of number and a list
 
-Change
+q)c:1 3 4f
+q)c
+1 3 4f                                                                                                                                                                                                                                       
+q)c[0]
+1f  
+- add 'f' to create a list of floats
+- add type qualifier, f-float, at the end of list
 
+OR
 
+q)c:1 2. 7
+q)c
+1 2 7f
+q)c[1]
+2f
+- add '.', decimal point to at least one element to create a list of floats
 
-q)reverse "welcome home"[0]
-"w"
-- you'd expect that to be 'e'; however q evaluates from right to left
-- so first the statement yields 'w' and then it reverse the single character which is still 'w'
+q)c: 9 10 11e0
+q)c
+9 10 11f
 
-q)"welcome"," home"
-"welcome home"
-- comma, ',' is a join operator
+List lenght
 
-q)4#"welcome"," home"
-"welc"
-- has, '#', is a take operator
--first join two character vectors, then take the first 4 characters of the resulting single character vector
+q)count a
+3
+- 3 elements
 
-q)-4#"welcome home"
-"home"
-- take the last 4 characters of the character vector
+q) count a,b
+6
+- find total number of elements in two lists
 
-q)4#(reverse "welcome home")
-"emoh"
-- reverse result is "emoh emoclew"
+q)count a,b,c
+9
 
-q)-4#(reverse "welcome home")
-"clew"
-- reverse result is "emoh emoclew"
+q)d:count a,b,c
+- assign total element count of three separate lists to variable, d
+q)d
+9
 
-q)4#"w"
-"wwww"
-- we need to take the first 4 characters, our string vector has only 1 character 'w'
-- so the other three characters will be filled in with the only known character 'w'
+q)d:2017.06.16 2017.06.17
+q)d
+2017.06.16 2017.06.17
+- list of undefined type
 
-q)4#"wx"
-"wxwx"
-- as above
+q)d:2017.06.16D 2017.06.17D
+q)d
+2017.06.16D00:00:00.000000000 2017.06.17D00:00:00.000000000
+- now we have a list of dates
 
-q)4#"wxz"
-"wxzw"
-- as above
-
-q)1 rotate "abc"
-"bca"
-- move 'a', single character, to the end of the remaining character vector
-
-q)2 rotate "abc"
-"cab"
-- move 'ab', two characters, to the end of the remaining character vector
-
-q)3 rotate "abc"
-"abc"
-q)0 rotate "abc"
-"abc"
-- note these two examples
-
+ 
+Do one more exercise on page 24
