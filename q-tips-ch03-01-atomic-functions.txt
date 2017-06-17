@@ -3,14 +3,47 @@ Q Tips by Nick Psaris
 ########################################################################
 chapter 3:
 ========================================================================
-=> page 22
+=> page 22-23
 ------------------------------------------------------------------------
-=> Character Vectors
+=> Atomic Functions
 ........................................................................
 
-q)"welcome home"[0]
-"w"
-- return 1st vector element
+
+q)a:1 2 3 + 4 5 6
+- no explicit loops required to add elements of two vectors
+
+q)a
+5 7 9
+q)a[0]
+5
+- verify new list contents
+
+q)1+a
+6 8 10
+
+q)a-1b
+4 6 8
+
+q)0b+a
+5 7 9
+
+q)3f+a
+8 10 12f
+
+q))b:"abc"
+q))b
+"abc"
+
+q)b,"|"
+"abc|"
+
+- other operations between atoms and vectors
+
+
+
+
+
+
 
 q)reverse "welcome home"[0]
 "w"
